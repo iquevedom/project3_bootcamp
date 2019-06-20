@@ -1,4 +1,4 @@
 // Export database models
 module.exports = {
-    Model: require("./menuItem")
+    Menu: require("./menuItem")
   };
