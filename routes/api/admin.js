@@ -10,7 +10,7 @@ router.get("/admin/menu", (req, res) => {
 });
 
 // Create new menu item
-router.post("/admin/menu", (req, res) => {
+router.post("/admin/menu/new", (req, res) => {
     db.Menu
         .create(req, query)
         .then(dbModel => res.json(dbModel))
@@ -18,7 +18,7 @@ router.post("/admin/menu", (req, res) => {
 });
 
 // Update menu item by ID
-router.post("/admin/menu", (req, res) => {
+router.post("/admin/menu/update", (req, res) => {
     db.Menu
         .findOneAndUpdate({ _id: req.params.id }, req.body)
         .then(dbModel => res.json(dbModel))
@@ -26,7 +26,7 @@ router.post("/admin/menu", (req, res) => {
 });
 
 // Delete menu item
-router.post("/admin/menu", (req, res) => {
+router.post("/admin/menu/delete", (req, res) => {
     db.Menu
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
