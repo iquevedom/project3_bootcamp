@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const adminRoutes = require("./admin.js");
+const adminRoutes = require("./admin");
 
 // Book routes
 router.use("/admin", adminRoutes);
