@@ -36,5 +36,4 @@ router.delete("/menu-items/delete/:id", (req, res) => {
         .catch(err => res.status(422).json(err));
 });
 
-
 module.exports = router;
