@@ -16,12 +16,12 @@ const menuSchema = new Schema({
       },
       // Error Message
       "Price must be a positive number."
-    ]},
+    ]
+  },
   startTime : Date,
   endTime : Date
-  
 });
 
-const Menu = mongoose.model("Menu", menuSchema);
+const Menu = mongoose.model("menu-item", menuSchema);
 
 module.exports = Menu;
