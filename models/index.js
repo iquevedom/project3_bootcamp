@@ -1,4 +1,5 @@
 // Export database models
 module.exports = {
-    Menu: require("./menuItem")
+    Menu: require("./menuItem"),
+    Visitors: require("./visitor")
   };
