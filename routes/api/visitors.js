@@ -1,5 +1,8 @@
 const router = require("express").Router();
 
+// Import connection to database
+const db = require("../../models/visitor");
+
 // Find and return all ordered items
 router.get("/orders", (req, res) => {
     db.Visitors
@@ -28,7 +31,7 @@ router.get("/orders/current", (req, res) => {
 router.get("/info", (req, res) => {
     //find by phone
     db.Visitors
-        .find({ phone: req.params.phone }, req.body)
+        .find()
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
 });

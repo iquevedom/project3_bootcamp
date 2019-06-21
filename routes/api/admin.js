@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 // Import connection to database
-const db = require("../../models");
+const db = require("../../models/menuItem");
 
 // Find and return all menu items
 router.get("/menu-items", (req, res) => {
