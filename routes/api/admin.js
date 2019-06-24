@@ -4,7 +4,7 @@ const router = require("express").Router();
 const db = require("../../models");
 
 // =======================
-// Order Finance Controls
+// Order/Finance Controls
 // =======================
 
 // Find and return all orders
@@ -27,6 +27,14 @@ router.get("/orders/:id", (req, res) => {
 router.get("/orders/:date", (req, res) => {
     db.Orders
         .find(req, query)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+// Post a new ordered item, specify the visitor to associate
+router.post("/orders", (req, res) => {
+    db.Orders
+        .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
 });
