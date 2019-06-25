@@ -3,6 +3,38 @@ const router = require("express").Router();
 // Import connection to database
 const db = require("../../models");
 
+// =======================
+// Order Finance Controls
+// =======================
+
+// Find and return all orders
+router.get("/orders", (req, res) => {
+    db.Orders
+        .find()
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+// Find and return orders by id
+router.get("/orders/:id", (req, res) => {
+    db.Orders
+        .findById({ _id: req.params.id })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+// Find and return orders by date
+router.get("/orders/:date", (req, res) => {
+    db.Orders
+        .find(req, query)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+// =============
+// Menu Controls
+// =============
+
 // Find and return all menu items
 router.get("/menu-items", (req, res) => {
     db.Menu

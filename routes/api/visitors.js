@@ -26,6 +26,19 @@ router.get("/orders/current", (req, res) => {
         .catch(err => res.status(422).json(err));
 });
 
+// Post a new ordered items
+// Please get this to work
+// router.post("/orders", (req, res) => {
+//     db.Orders
+//         .create(req.body)
+//         .then(dbModel => res.json(dbModel))
+//         .catch(err => res.status(422).json(err));
+// }).then(db.Visitors);
+
+// ====================
+// Information Controls
+// ====================
+
 // Check visitor information
 router.get("/info", (req, res) => {
     //find by phone
@@ -38,7 +51,7 @@ router.get("/info", (req, res) => {
 // Create new visitor field
 router.post("/info", (req, res) => {
     db.Visitors
-    .create(req, query)
+    .create(req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 })

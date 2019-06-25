@@ -1,4 +1,4 @@
-// Schema for menu items
+// Schema for visitor data
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
