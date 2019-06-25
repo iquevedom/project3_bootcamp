@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
-    totalCost: { type: Number, required: true },
-    // Get this working, auto-fill today's date
-    date: { type: Date, default: Date().now },
+    items: [],
+    totalCost: Number,
+    owner: { type: Schema.Types.ObjectId, ref: "Visitors", required: true },
+    date: { type: Date, default: Date.now },
+    fulfilled: { type: Boolean, default: false }
 });
 
 const Orders = mongoose.model("order", orderSchema);
