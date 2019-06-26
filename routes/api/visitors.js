@@ -8,7 +8,7 @@ const db = require("../../models");
 // =======================
 
 // Find and return all ordered items
-router.get("/:id/orders", (req, res) => {
+router.get("/orders/:id", (req, res) => {
     db.Visitors
         .find({ owner: req.params.id })
         .then(dbModel => res.json(dbModel))
@@ -16,7 +16,7 @@ router.get("/:id/orders", (req, res) => {
 });
 
 // Find and return all items ordered today
-router.get("/:id/orders/today", (req, res) => {
+router.get("orders/:id/today", (req, res) => {
     db.Visitors
         .find({ owner: req.params.id, date: Date.now })
         .then(dbModel => res.json(dbModel))
@@ -24,7 +24,7 @@ router.get("/:id/orders/today", (req, res) => {
 });
 
 // Find and return all items ordered on specific date
-router.get("/:id/orders/:date", (req, res) => {
+router.get("orders/:id/:date", (req, res) => {
     db.Visitors
         .find({ owner: req.params.id, date: req.params.date })
         .then(dbModel => res.json(dbModel))
@@ -32,7 +32,7 @@ router.get("/:id/orders/:date", (req, res) => {
 });
 
 // Post a new ordered item
-router.post("/:id/orders", (req, res) => {
+router.post("orders/:id", (req, res) => {
     db.Orders
         .create(req.body)
         .then(dbModel => res.json(dbModel))
@@ -40,7 +40,7 @@ router.post("/:id/orders", (req, res) => {
 });
 
 // Update an ordered item
-router.put("/:id/orders/:oId", (req, res) => {
+router.put("orders/:id/:oId", (req, res) => {
     db.Orders
         .findOneAndUpdate({ _id: req.params.oId }, req.body)
         .then(dbModel => res.json(dbModel))
