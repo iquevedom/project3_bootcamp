@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Nav from "./components/NavSection";
 import './App.css';
 
 // TK
@@ -8,7 +7,6 @@ import { Provider } from "react-redux";
 import store from "../src/state";
 
 // TK// Common Components
-import Navbar from "../src/components/common/Navbar";
 import ModalController from "../src/components/modals";
 
 // Pages
