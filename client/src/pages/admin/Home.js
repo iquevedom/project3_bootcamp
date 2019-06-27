@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NavSection from "../../components/NavSection";
 
 class Home extends Component {
     state = {
@@ -12,7 +11,6 @@ class Home extends Component {
     render() {
         return (
             <>
-            <NavSection/>
             <div>
                 Testing
             </div>
