@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/admin/Home";
+import Home from "./pages/visitor/Home";
 import Menu from "./pages/visitor/Menu";
-import Orders from "./pages/admin/Orders"
+import Orders from "./pages/visitor/Orders"
 import NoPath from "./pages/NoPath";
-import AdminHome from "./pages/visitor/Home";
-import AdminMenu from "./pages/visitor/Menu";
+import AdminHome from "./pages/admin/Home";
+import AdminMenu from "./pages/admin/Menu";
 import AdminOrders from "./pages/admin/Orders"
 import Nav from "./components/NavSection";
 import './App.css';
