@@ -1,24 +1,15 @@
 import React, { Component } from "react";
-import NavSection from "../../components/NavSection";
+import NavSection from "../../common/NavSection";
 
-class Orders extends Component {
-    state = {
-        books: [],
-        title: "",
-        author: "",
-        synopsis: ""
-    };
+class AdminOrders extends Component {
+    state = {};
 
     render() {
         return (
             <>
-                <NavSection />
-                <div>
-                    orders
-            </div>
             </>
         )
     }
 }
 
-export default Orders;
+export default AdminOrders;
