@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavSection from "../../common/NavVisitors/NavSection"
 
 class VisitorOrders extends Component {
     state = {};
@@ -6,6 +7,10 @@ class VisitorOrders extends Component {
     render() {
         return (
             <>
+                <NavSection />
+                <div>
+                    asadsads
+                </div>
             </>
         )
     }
