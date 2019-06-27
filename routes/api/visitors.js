@@ -1,11 +1,6 @@
 const router = require("express").Router();
 
-// Import connection to database
 const db = require("../../models");
-
-// =======================
-// Order Finance Controls
-// =======================
 
 // Find and return all ordered items
 router.get("/orders/:id", (req, res) => {

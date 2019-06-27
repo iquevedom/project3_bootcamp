@@ -1,16 +1,13 @@
 const mongoose = require("mongoose");
 
 //Load User model
-const Item = require("../models/menuItem");
+const Item = require("../models/visitor");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/restaurant");
 
 const itemsSeed = [
   {
-    name: "Burger",
-    ingredients: "sesame seed bun, beef patty",
-    description: "A classic sandwich favorite, customized to order.",
-    price : 8.0
+    phone: 1234567890
   }
 ];
 

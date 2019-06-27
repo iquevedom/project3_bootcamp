@@ -4,8 +4,9 @@ const Schema = mongoose.Schema;
 
 const visitorSchema = new Schema({
   nameLast: String,
-  nameFirst: {type: String, required: true},
-  phone: { type: Number, required: true }
+  nameFirst: String,
+  phone: {type: Number, required: true},
+  orders: []
 });
 
 const Visitors = mongoose.model("visitor", visitorSchema);
