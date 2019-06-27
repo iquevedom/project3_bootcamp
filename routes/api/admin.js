@@ -52,7 +52,7 @@ router.get("/menu-items", (req, res) => {
 });
 
 // Create new menu item
-router.post("/menu-items/new", (req, res) => {
+router.post("/menu-items", (req, res) => {
   db.Menu
     .create(req.body)
     .then(dbModel => res.json(dbModel))
@@ -60,7 +60,7 @@ router.post("/menu-items/new", (req, res) => {
 });
 
 // Update menu item by ID
-router.put("/menu-items/update/:id", (req, res) => {
+router.put("/menu-items/:id", (req, res) => {
   db.Menu
     .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbModel => res.json(dbModel))
@@ -68,7 +68,7 @@ router.put("/menu-items/update/:id", (req, res) => {
 });
 
 // Delete menu item
-router.delete("/menu-items/delete/:id", (req, res) => {
+router.delete("/menu-items/:id", (req, res) => {
   db.Menu
     .findById({ _id: req.params.id })
     .then(dbModel => dbModel.remove())

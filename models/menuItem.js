@@ -18,6 +18,7 @@ const menuSchema = new Schema({
       "Price must be a positive number."
     ]
   },
+  type: String,
   startTime : Date,
   endTime : Date
 });

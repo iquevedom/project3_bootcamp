@@ -1,3 +1,14 @@
+# Restaurant Mod App
+
+## Developer Note
+
+To run a test build, open a terminal instance in the root directory and run 'nodemon server.js --ignore client/*'. Nodemon appears to be having buggy behavior at the moment, either constantly attempting to start itself or ignoring the running the client altogether.
+
+Once nodemon is running, open a terminal instance inside the client directory and run 'npm start'. Keep both terminals open during your testing. You should now be able to run tests.
+
+
+# React App Information
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

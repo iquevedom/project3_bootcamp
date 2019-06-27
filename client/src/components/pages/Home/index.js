@@ -2,7 +2,7 @@ import React from "react";
 import { Hero, HeroBody, Title } from "bloomer";
 import Navbar from "../../common/Navbar";
 
-function Home(props) {
+function AdminHome(props) {
   return (
     <div>
       <Hero isColor="info" isSize="medium">
@@ -17,4 +17,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default AdminHome;
