@@ -10,7 +10,7 @@ export default function NavSection() {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#menu">Menu</Nav.Link>
+                    <Nav.Link href="/menu">Menu</Nav.Link>
                     <Nav.Link href="/orders">Orders</Nav.Link>
                 </Nav>
             </Navbar>
