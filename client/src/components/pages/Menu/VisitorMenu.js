@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class AdminMenu extends Component {
+class VisitorMenu extends Component {
     state = {};
 
     render() {
@@ -11,4 +11,4 @@ class AdminMenu extends Component {
     }
 }
 
-export default AdminMenu;
+export default VisitorMenu;
