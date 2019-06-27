@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import store from "../src/state";
 
 // TK// Common Components
-import Navbar from "../src/components/common/Navbar";
 import ModalController from "../src/components/modals";
 
 // Pages
