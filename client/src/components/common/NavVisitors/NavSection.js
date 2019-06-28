@@ -11,6 +11,7 @@ class NavSection extends Component {
                     <Nav className="mr-auto">
                         <Nav.Link href="#menu">Menu</Nav.Link>
                         <Nav.Link href="/orders">Orders</Nav.Link>
+                        <Nav.Link href="/admin/menu">Administrator</Nav.Link>
                     </Nav>
                 </Navbar>
             </>
