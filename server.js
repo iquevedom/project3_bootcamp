@@ -4,7 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Passport configuration TK
 // const passport = require("passport");
@@ -18,11 +18,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
 
+app.use(routes);
+
 // Serve Static TK
 app.use(express.static("app/build"));
 
 // Add routes, both API and view
-app.use(routes);
 
 // Index call TK
 app.get("*", (req, res) => {

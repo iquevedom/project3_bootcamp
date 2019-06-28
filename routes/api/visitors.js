@@ -54,37 +54,38 @@ router.put("/orders/:id/:oId", (req, res) => {
 // ====================
 
 // Check visitor information
-router.get("/info", (req, res) => {
-  db.Visitors
-    .find()
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err))
-});
+// Possible future implementation
+// router.get("/info", (req, res) => {
+//   db.Visitors
+//     .find()
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err))
+// });
 
-// Check visitor information
-router.get("/info/:phone", (req, res) => {
-  // find by phone
-  // if there is no associated phone, an empty array will be returned
-  db.Visitors
-    .find({ phone: req.params.phone })
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err))
-});
+// // Check visitor information
+// router.get("/info/:phone", (req, res) => {
+//   // find by phone
+//   // if there is no associated phone, an empty array will be returned
+//   db.Visitors
+//     .find({ phone: req.params.phone })
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err))
+// });
 
-// Create new visitor field
-router.post("/info", (req, res) => {
-  db.Visitors
-    .create(req.body)
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));
-})
+// // Create new visitor field
+// router.post("/info", (req, res) => {
+//   db.Visitors
+//     .create(req.body)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err));
+// })
 
 // =============
 // Menu Controls
 // =============
 
 // Find and return all menu items
-router.get("/api/menu", (req, res) => {
+router.get("/menu", (req, res) => {
   db.Menu
     .find()
     .then(dbModel => res.json(dbModel))
