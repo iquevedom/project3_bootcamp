@@ -1,4 +1,7 @@
+import VisitorOrders from "./VisitorOrders";
+import AdminOrders from "./AdminOrders";
+
 export default {
-    Admin: require("./AdminOrders"),
-    Visitor: require("./VisitorOrders")
+    Admin: AdminOrders,
+    Visitor: VisitorOrders
 };

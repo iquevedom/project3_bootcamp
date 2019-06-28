@@ -12,11 +12,12 @@ import ModalController from "../src/components/modals";
 // Pages
 import VisitorHome from "./components/pages/Home/VisitorHome";
 import AdminHome from "./components/pages/Home/AdminHome";
+import Home from "./components/pages/Home"
 import Orders from "./components/pages/Orders/VisitorOrders";
 import Menu from "./components/pages/Menu";
 import NoPath from "./components/pages/NoPath";
-import Post from "../src/components/pages/Post";
-import AuthRoute from "../src/utils/AuthRoute";
+// import Post from "../src/components/pages/Post";
+// import AuthRoute from "../src/utils/AuthRoute";
 
 
 function App(props) {
@@ -24,14 +25,14 @@ function App(props) {
     <div>
       <Router>
         <Switch>
-          <Route exact path="/" component={VisitorHome} />
-          <Route exact path="/admin/" component={AdminHome} />
-          <Route exact path="/orders" component={Orders} />
-          {/* <Route exact path="/menu" component={Menu} />
-        <Route exact path="/orders" component={Orders} />
-        <Route exact path="/admin/orders" component={AdminOrders} />
-        <Route exact path="/admin/menu-itmes" component={AdminMenu} />
-        <Route exact path="/admin/orders" component={AdminOrders} /> */}
+          {/* Visitor/client renders */}
+          <Route exact path="/" component={Home.Visitor} />
+          <Route exact path="/orders" component={Orders.Visitor} />
+          <Route exact path="/menu" component={Menu.Visitor} />
+          {/* Admin renders */}
+          <Route exact path="/admin/" component={Home.Admin} />
+          <Route exact path="/admin/orders" component={Orders.Admin} />
+          <Route exact path="/admin/menu-itmes" component={Menu.Admin} />
           <Route component={NoPath} />
         </Switch>
       </Router>

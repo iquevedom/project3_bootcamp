@@ -1,4 +1,7 @@
+import AdminMenu from "./AdminMenu";
+import VisitorMenu from "./VisitorMenu";
+
 export default {
-    Admin: require("./AdminMenu"),
-    Visitor: require("./VisitorMenu")
+    Admin: AdminMenu,
+    Visitor: VisitorMenu
 };
