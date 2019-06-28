@@ -10,10 +10,8 @@ import store from "../src/state";
 import ModalController from "../src/components/modals";
 
 // Pages
-import VisitorHome from "./components/pages/Home/VisitorHome";
-import AdminHome from "./components/pages/Home/AdminHome";
 import Home from "./components/pages/Home"
-import Orders from "./components/pages/Orders/VisitorOrders";
+import Orders from "./components/pages/Orders";
 import Menu from "./components/pages/Menu";
 import NoPath from "./components/pages/NoPath";
 // import Post from "../src/components/pages/Post";

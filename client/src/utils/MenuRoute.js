@@ -1,8 +1,8 @@
-import axios from "axios";
+import Axios from "axios";
 
 // Visitor-side menu
 export default {
-  getMenu: function() {
-    return axios.get("/api/menu");
+  getMenu() {
+    return Axios.get("/api/menu");
   }
 }
