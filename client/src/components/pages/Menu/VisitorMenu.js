@@ -22,7 +22,7 @@ class VisitorMenu extends Component {
         API.getMenu()
             .then(res =>
                 this.setState({
-                    items: res.data,
+                    items: res,
                     name: "",
                     ingredients: "",
                     description: "",
