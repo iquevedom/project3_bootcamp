@@ -3,6 +3,13 @@ const router = require("express").Router();
 const db = require("../../models");
 
 // Find and return all ordered items
+router.get("/orders/find", (req, res) => {
+  db.Visitors
+    .find()
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
 router.get("/orders/:id", (req, res) => {
   db.Visitors
     .find({ owner: req.params.id })
@@ -19,7 +26,7 @@ router.get("orders/:id/today", (req, res) => {
 });
 
 // Find and return all items ordered on specific date
-router.get("orders/:id/:date", (req, res) => {
+router.get("/orders/:id/:date", (req, res) => {
   db.Visitors
     .find({ owner: req.params.id, date: req.params.date })
     .then(dbModel => res.json(dbModel))
@@ -27,7 +34,7 @@ router.get("orders/:id/:date", (req, res) => {
 });
 
 // Post a new ordered item
-router.post("orders/:id", (req, res) => {
+router.post("/orders/:id", (req, res) => {
   db.Orders
     .create(req.body)
     .then(dbModel => res.json(dbModel))
@@ -35,7 +42,7 @@ router.post("orders/:id", (req, res) => {
 });
 
 // Update an ordered item
-router.put("orders/:id/:oId", (req, res) => {
+router.put("/orders/:id/:oId", (req, res) => {
   db.Orders
     .findOneAndUpdate({ _id: req.params.oId }, req.body)
     .then(dbModel => res.json(dbModel))
@@ -77,7 +84,7 @@ router.post("/info", (req, res) => {
 // =============
 
 // Find and return all menu items
-router.get("/menu", (req, res) => {
+router.get("/api/menu", (req, res) => {
   db.Menu
     .find()
     .then(dbModel => res.json(dbModel))

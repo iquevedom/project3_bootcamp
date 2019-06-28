@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import API from "../../../utils/MenuRoute";
+import MenuRoute from "../../../utils/MenuRoute";
+import NavSection from "../../common/NavVisitors/NavSection"
 import { Link } from "react-router-dom";
-import { Jumbotron, ListGroup } from "react-bootstrap";
+import { Jumbotron, ListGroup } from "react-bootstrap/es/";
 
 class VisitorMenu extends Component {
     state = {
@@ -19,7 +20,7 @@ class VisitorMenu extends Component {
     }
 
     loadMenu = () => {
-        API.getMenu()
+        MenuRoute.getMenu()
             .then(res =>
                 this.setState({
                     items: res,
@@ -36,6 +37,7 @@ class VisitorMenu extends Component {
     render() {
         return (
             <>
+                <NavSection />
                 <Jumbotron>
                     <h1>The Big Restaurant</h1>
                 </Jumbotron>
