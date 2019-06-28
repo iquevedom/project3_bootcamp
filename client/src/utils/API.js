@@ -10,5 +10,10 @@ export default {
   },
   getInfo(token) {
     return Axios.get("/v1/user/getInfo", { headers: { Authorization: token } });
+  },
+  // Gets all books
+  
+  getMenus: function() {
+    return Axios.get("/api/menu-items");
   }
 };
