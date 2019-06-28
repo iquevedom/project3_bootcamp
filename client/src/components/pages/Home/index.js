@@ -1,4 +1,7 @@
+import AdminHome from "./AdminHome";
+import VisitorHome from "./VisitorHome";
+
 export default {
-    Admin: require("./AdminHome"),
-    Visitor: require("./VisitorHome")
+    Admin: AdminHome,
+    Visitor: VisitorHome
 };
