@@ -14,8 +14,8 @@ import Home from "./components/pages/Home"
 import Orders from "./components/pages/Orders";
 import Menu from "./components/pages/Menu";
 import NoPath from "./components/pages/NoPath";
-// import Post from "../src/components/pages/Post";
-// import AuthRoute from "../src/utils/AuthRoute";
+import Post from "../src/components/pages/Post";
+import AuthRoute from "../src/utils/AuthRoute";
 
 
 function App(props) {

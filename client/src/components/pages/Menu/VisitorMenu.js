@@ -21,15 +21,16 @@ class VisitorMenu extends Component {
 
     loadMenu = () => {
         MenuRoute.getMenu()
-            .then(res =>
+            .then(res => {
                 this.setState({
-                    items: res,
+                    items: res.data,
                     name: "",
                     ingredients: "",
                     description: "",
                     price: "",
                     type: ""
                 })
+            }
             )
             .catch(err => console.log(err));
     };
@@ -46,8 +47,6 @@ class VisitorMenu extends Component {
                         <ListGroup>
                             <ListGroup.Item key={item._id}>
                                 <h3>{item.name}</h3>
-                                <strong>{item.ingredients}</strong>
-                                <p>{item.description}</p>
                             </ListGroup.Item>
                         </ListGroup>
                     ))) : (
