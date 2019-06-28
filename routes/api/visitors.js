@@ -72,4 +72,16 @@ router.post("/info", (req, res) => {
     .catch(err => res.status(422).json(err));
 })
 
+// =============
+// Menu Controls
+// =============
+
+// Find and return all menu items
+router.get("/menu", (req, res) => {
+  db.Menu
+    .find()
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
 module.exports = router;

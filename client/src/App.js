@@ -32,7 +32,7 @@ function App(props) {
           {/* Admin renders */}
           <Route exact path="/admin/" component={Home.Admin} />
           <Route exact path="/admin/orders" component={Orders.Admin} />
-          <Route exact path="/admin/menu-itmes" component={Menu.Admin} />
+          <Route exact path="/admin/menu" component={Menu.Admin} />
           <Route component={NoPath} />
         </Switch>
       </Router>
