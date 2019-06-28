@@ -1,92 +1,60 @@
 import React, { Component } from "react";
+import MenuRoute from "../../../utils/AdminRoute";
+import NavSection from "../../common/NavVisitors/NavSection"
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../Grid";
-import Jumbotron from "../../Jumbotron";
-import { List, ListItem } from "../../List";
-import API from "../../../utils/API";
-import DeleteBtn from "../../DeleteBtn";
+import { Jumbotron, ListGroup } from "react-bootstrap/es/";
 
- class AdminMenu extends Component {
- /* state = {
-    book: {}
-  }; */
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  /* componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ book: res.data }))
-      .catch(err => console.log(err));
-  } */
-
-  
+class AdminMenu extends Component {
     state = {
-      book: {},
-      books: [],
-      title: "",
-      author: "",
-      synopsis: ""
+        allTypes: ["sandwich", "appetizer", "beverage", "platter"],
+        items: [],
+        name: "",
+        ingredients: "",
+        description: "",
+        price: "",
+        type: ""
     };
 
-  componentDidMount() {
-    this.loadMenus();
-  }
+    componentDidMount() {
+        this.loadMenu();
+    }
 
-  loadMenus = () => {
-    API.getMenus()
-      .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-      )
-      .catch(err => console.log(err));
-  };
+    loadMenu = () => {
+        MenuRoute.getMenu()
+            .then(res => {
+                this.setState({
+                    items: res.data,
+                    name: "",
+                    ingredients: "",
+                    description: "",
+                    price: "",
+                    type: ""
+                })
+            }
+            )
+            .catch(err => console.log(err));
+    };
 
-  render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                Menus Available
-               {/*  {this.state.book.title} by {this.state.book.author} */}
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Menus</h1>
-              <p>
-                {this.state.books.synopsis}
-              </p>
-              {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/menu-items/" + book._id}>
-                      <strong>
-                        {book.title} : {book.author}
-                      </strong>
-                      <p>{book.synopsis}</p>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )} 
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Admin Menu</Link>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+    render() {
+        return (
+            <>
+                <NavSection />
+                <Jumbotron>
+                    <h1>The Big Restaurant</h1>
+                </Jumbotron>
+                {this.state.items.length ? (
+                    this.state.items.map(item => (
+                        <ListGroup>
+                            <ListGroup.Item key={item._id}>
+                                <h3>{item.name}</h3>
+                            </ListGroup.Item>
+                        </ListGroup>
+                    ))) : (
+                        <h3>Our menu is currently unavailable for viewing.</h3>
+                    )}
+            </>
+        )
+    }
 }
 
 export default AdminMenu;

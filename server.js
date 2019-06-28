@@ -18,11 +18,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
 
+app.use(routes);
+
 // Serve Static TK
 app.use(express.static("app/build"));
 
 // Add routes, both API and view
-app.use(routes);
 
 // Index call TK
 app.get("*", (req, res) => {

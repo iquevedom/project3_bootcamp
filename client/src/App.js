@@ -10,14 +10,12 @@ import store from "../src/state";
 import ModalController from "../src/components/modals";
 
 // Pages
-import VisitorHome from "./components/pages/Home/VisitorHome";
-import AdminHome from "./components/pages/Home/AdminHome";
 import Home from "./components/pages/Home"
-import Orders from "./components/pages/Orders/VisitorOrders";
+import Orders from "./components/pages/Orders";
 import Menu from "./components/pages/Menu";
 import NoPath from "./components/pages/NoPath";
-// import Post from "../src/components/pages/Post";
-// import AuthRoute from "../src/utils/AuthRoute";
+import Post from "../src/components/pages/Post";
+import AuthRoute from "../src/utils/AuthRoute";
 
 
 function App(props) {
@@ -33,7 +31,6 @@ function App(props) {
           <Route exact path="/admin/" component={Home.Admin} />
           <Route exact path="/admin/orders" component={Orders.Admin} />
           <Route exact path="/admin/menu" component={Menu.Admin} />
-          <Route exact path="/admin/menuManagement" component={Menu.Detail} />
           <Route component={NoPath} />
         </Switch>
       </Router>
