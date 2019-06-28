@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import MenuRoute from "../../../utils/AdminRoute";
+import MenuRoute from "../../../utils/MenuRoute";
 import NavSection from "../../common/NavVisitors/NavSection"
 import { Link } from "react-router-dom";
 import { Jumbotron, ListGroup } from "react-bootstrap/es/";
 
-<<<<<<< HEAD
 class AdminMenu extends Component {
-=======
-class VisitorMenu extends Component {
->>>>>>> d560923e7307fe86548d1f0179d60c3e586285f7
     state = {
         allTypes: ["sandwich", "appetizer", "beverage", "platter"],
         items: [],
