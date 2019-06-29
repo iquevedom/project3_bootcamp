@@ -15,5 +15,9 @@ export default {
   
   getMenus: function() {
     return Axios.get("/api/menu-items");
-  }
+  },
+    // Deletes the book with the given id
+    deleteMenu: function(id) {
+      return Axios.delete("/api/menus/" + id);
+    },
 };

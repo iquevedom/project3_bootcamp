@@ -21,7 +21,7 @@ class AdminMenu extends Component {
               </Col>
               <Col size="md-4 sm-12">
                 <Jumbotron>
-                <a className="navbar-brand" href="/admin/menuManagement">Menu Management</a>
+                <a className="navbar-brand" href="/admin/menu">Menu Management</a>
                 </Jumbotron>
               </Col>
               <Col size="md-4 sm-12">

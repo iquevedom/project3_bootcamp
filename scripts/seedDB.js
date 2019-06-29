@@ -7,9 +7,39 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/restaurant");
 
 const itemsSeed = [
   {
-    name: "Burger",
-    ingredients: "sesame seed bun, beef patty",
+    name: "Cheese Burger",
+    ingredients: "Lettuce, onion, sesame seed bun, beef patty",
     description: "A classic sandwich favorite, customized to order.",
+    price : 8.0
+  },
+  {
+    name: "Doble Burger",
+    ingredients: "Meat, onion, sesame seed bun, beef patty",
+    description: "A dobble delicious burger favorite, customized to order.",
+    price : 8.0
+  },
+  {
+    name: "Steak",
+    ingredients: "3/4 roasbeef sesame seed bun, beef patty",
+    description: "8 oz of your favorite, customized to order.",
+    price : 8.0
+  },
+  {
+    name: "Cheese Burger",
+    ingredients: "Lettuce, onion, sesame seed bun, beef patty",
+    description: "A classic sandwich favorite, customized to order.",
+    price : 8.0
+  },
+  {
+    name: "Doble Burger",
+    ingredients: "Meat, onion, sesame seed bun, beef patty",
+    description: "A dobble delicious burger favorite, customized to order.",
+    price : 8.0
+  },
+  {
+    name: "Steak",
+    ingredients: "3/4 roasbeef sesame seed bun, beef patty",
+    description: "8 oz of your favorite, customized to order.",
     price : 8.0
   }
 ];
