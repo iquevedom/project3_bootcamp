@@ -6,10 +6,10 @@ class NavSection extends Component {
         return (
             <>
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="/admin">Admin Home</Navbar.Brand>
+                    <Navbar.Brand href="/admin">Home Control Panel</Navbar.Brand>
                     <Nav className="mr-auto">
-                        <Nav.Link href="/revenue">Revenue Reports</Nav.Link>
-                      {/*   <Nav.Link href="/orders/find">Orders</Nav.Link> */}
+                        {/* <Nav.Link href="/revenue">Revenue Reports</Nav.Link> */}
+                        {/*   <Nav.Link href="/orders/find">Orders</Nav.Link> */}
                     </Nav>
                 </Navbar>
             </>
