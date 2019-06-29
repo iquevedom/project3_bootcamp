@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import MenuRoute from "../../../utils/MenuRoute";
 import NavSection from "../../common/NavVisitors/NavSection"
-import { Jumbotron, ListGroup, Container} from "react-bootstrap/es/";
+import Footer from "../../common/Footer";
+import { Jumbotron, ListGroup, Container } from "react-bootstrap/es/";
 import "./visitor.css"
 import { Link } from "react-router-dom";
 
@@ -42,22 +43,24 @@ class VisitorMenu extends Component {
             <>
                 <NavSection />
                 <Jumbotron>
-                    <h1>The Big Restaurant</h1>
+                    <h1>The BIG Menu</h1>
                 </Jumbotron>
                 {this.state.items.length ? (
-                    this.state.items.map(item => (
-                        <Container>
+                    <Container>
+                        {this.state.items.map(item => (
                             <ListGroup>
-                                        <ListGroup.Item key={item._id}>
-                                            <h3 className="item-head">{item.name}</h3>
-                                            <p className="item-ingredients">{item.ingredients}</p>
-                                            <p className="item-description">{item.description}</p>
-                                        </ListGroup.Item>
+                                <ListGroup.Item key={item._id}>
+                                    <h3 className="item-head">{item.name}</h3>
+                                    <p className="item-ingredients">{item.ingredients}</p>
+                                    <p className="item-description">{item.description}</p>
+                                </ListGroup.Item>
                             </ListGroup>
-                        </Container>
-                    ))) : (
+                        ))}
+                    </Container>
+                ) : (
                         <h3>Our menu is currently unavailable for viewing.</h3>
                     )}
+                <Footer />
             </>
         )
     }

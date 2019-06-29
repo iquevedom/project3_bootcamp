@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import MenuRoute from "../../../utils/MenuRoute";
 import NavSection from "../../common/NavAdmin/NavSection";
-import { Link } from "react-router-dom";
 import { Jumbotron, ListGroup } from "react-bootstrap/es/";
 import DeleteBtn from "../../DeleteBtn";
+import AddForm from "../../AddForm";
 import API from "../../../utils/API";
 
 class AdminMenu extends Component {
@@ -49,34 +49,27 @@ class AdminMenu extends Component {
       <>
         <NavSection />
         <Jumbotron>
-          <h1>The Big Restaurant</h1>
+          <h1>Menu Control Pane</h1>
         </Jumbotron>
-        <h1>Actual Menu</h1>
+        <AddForm />
         {this.state.items.length ? (
           this.state.items.map(item => (
             <ListGroup>
               <ListGroup.Item key={item._id}>
-                <Link to={"/menus/" + item._id}>
-                  <strong>
-                    <h3>Name : {item.name}</h3>
-                  </strong>
-                </Link>
-                <h3>
-                  <strong>Ingredients : </strong> : {item.ingredients}
-                </h3>
-                <h3>
-                  <strong>Price : </strong> : {item.price}
-                </h3>
-                <h3>
-                  <strong>Description : </strong> : {item.description}
-                </h3>
-                <DeleteBtn onClick={() => this.deleteMenu(item._id)} />
+                <h3><strong>Name : {item.name}</strong></h3>
+                  <p><strong>Ingredients : </strong> : {item.ingredients}</p>
+                  <p><strong>Price : </strong> : {item.price}</p>
+                  <p><strong>Description : </strong> : {item.description}</p>
+                <DeleteBtn
+                  item={item}
+                  onClick={() => this.deleteMenu(item._id)}
+                />
               </ListGroup.Item>
             </ListGroup>
           ))
         ) : (
-          <h3>Our menu is currently unavailable for viewing.</h3>
-        )}
+            <h3>Our menu is currently unavailable for viewing or empty.</h3>
+          )}
       </>
     );
   }

@@ -12,6 +12,6 @@ export default {
       return Axios.post("/api/admin/menu");
   },
   deleteAdminMenu(id) {
-    return Axios.delete("/api/admin/menu" + id);
+    return Axios.delete("/api/admin/menu/" + id);
   }
 }
