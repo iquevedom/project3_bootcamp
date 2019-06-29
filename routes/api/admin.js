@@ -8,7 +8,7 @@ const db = require("../../models");
 // =======================
 
 // Find and return all orders
-router.get("/menu", (req, res) => {
+router.get("/orders", (req, res) => {
   db.Orders
     .find()
     .then(dbModel => res.json(dbModel))
