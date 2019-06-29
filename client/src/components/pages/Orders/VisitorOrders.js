@@ -11,8 +11,29 @@ class VisitorOrders extends Component {
         nameLast: "",
         nameFirst: "",
         phone: Number,
-        visitorObj: {}
+        orders: [],
+        _id: ""
     };
+
+    componentDidMount() {
+        if (!this.state._id === "") {
+            this.loadOrders(this.state._id);
+        }
+    }
+
+    loadOrders = () => {
+        OrderRoute.getOrders(this.state._id)
+            .then(res => {
+                this.setState({
+                    nameLast: "",
+                    nameFirst: "",
+                    phone: Number,
+                    orders: res.data,
+                    _id: ""
+                });
+            })
+            .catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -22,7 +43,8 @@ class VisitorOrders extends Component {
                     <h1>Your BIG Orders</h1>
                 </Jumbotron>
                 {this.state.visitorObj ? (
-                    <Container />
+                    <Container>
+                    </Container>
                 ) : (
                         <Container>
                             <h3>You do not have any pending orders.</h3>
