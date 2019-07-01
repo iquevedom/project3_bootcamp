@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import OrderRoute from "../../../utils/OrderRoute";
 import VisitorRoute from "../../../utils/VisitorRoute";
 import InfoTaker from "./InfoTaker";
 import InfoWindow from "./InfoWindow";
@@ -14,17 +13,9 @@ class VisitorOrders extends Component {
 
     componentDidMount() {
         if (!this.state._id === "") {
-            this.loadOrders();
+            this.props.loadOrders();
         }
     }
-
-    loadOrders = () => {
-        OrderRoute.getOrders(this.state._id)
-            .then(res => {
-                this.setState({ orders: res.data });
-            })
-            .catch(err => console.log(err));
-    };
 
     onChange(e) {
         this.setState({ phone: e.target.phone });
