@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const visitorSchema = new Schema({
   nameLast: String,
   nameFirst: String,
-  phone: {type: Number, required: true}
+  phone: {type: String, required: true}
 });
 
 const Visitors = mongoose.model("visitor", visitorSchema);
