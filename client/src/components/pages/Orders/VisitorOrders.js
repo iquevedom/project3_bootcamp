@@ -1,56 +1,72 @@
 import React, { Component } from "react";
-import NavSection from "../../common/NavVisitors/NavSection"
 import OrderRoute from "../../../utils/OrderRoute";
-import { Link } from "react-router-dom";
-import { Jumbotron, ListGroup } from "react-bootstrap/es/";
-import { Container } from "bloomer/lib/layout/Container";
-import Footer from "../../common/Footer";
+import VisitorRoute from "../../../utils/VisitorRoute";
+import InfoTaker from "./InfoTaker";
+import InfoWindow from "./InfoWindow";
+import VisitorOrderShow from "./VisitorOrderShow";
+import { Jumbotron, Container, Modal } from "react-bootstrap/es/";
+import "./style.css";
 
 class VisitorOrders extends Component {
     state = {
-        nameLast: "",
-        nameFirst: "",
-        phone: Number,
-        orders: [],
-        _id: ""
+        orderItem: {}
     };
 
     componentDidMount() {
         if (!this.state._id === "") {
-            this.loadOrders(this.state._id);
+            this.loadOrders();
         }
     }
 
     loadOrders = () => {
         OrderRoute.getOrders(this.state._id)
             .then(res => {
-                this.setState({
-                    nameLast: "",
-                    nameFirst: "",
-                    phone: Number,
-                    orders: res.data,
-                    _id: ""
-                });
+                this.setState({ orders: res.data });
             })
             .catch(err => console.log(err));
-    }
+    };
+
+    onChange(e) {
+        this.setState({ phone: e.target.phone });
+    };
+
+    onSubmit = phone => {
+        VisitorRoute.getInfoByPhone(phone)
+            .then(res => {
+                this.setState({
+                    nameFirst: res.data.nameFirst,
+                    nameLast: res.data.nameLast,
+                    _id: res.data._id
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    };
 
     render() {
         return (
             <>
-                <NavSection />
                 <Jumbotron>
-                    <h1>Your BIG Orders</h1>
+                    <h1>Your BIG Order</h1>
                 </Jumbotron>
-                {this.state.visitorObj ? (
+                {this.state._id === "" ? (
                     <Container>
+                        <InfoTaker
+                            onSubmit={this.onSubmit}
+                            onChange={this.onChange}
+                        />
                     </Container>
                 ) : (
                         <Container>
-                            <h3>You do not have any pending orders.</h3>
+                            <InfoWindow
+                                phone={this.state.phone}
+                            />
+                            <VisitorOrderShow
+                                order={this.state.orders}
+                            />
                         </Container>
                     )}
-                <Footer />
             </>
         )
     }

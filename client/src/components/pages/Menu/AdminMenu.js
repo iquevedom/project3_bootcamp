@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MenuRoute from "../../../utils/MenuRoute";
-import NavSection from "../../common/NavAdmin/NavSection";
 import { Jumbotron, ListGroup } from "react-bootstrap/es/";
 import DeleteBtn from "../../DeleteBtn";
 import AddForm from "../../AddForm";
@@ -47,7 +46,6 @@ class AdminMenu extends Component {
   render() {
     return (
       <>
-        <NavSection />
         <Jumbotron>
           <h1>Menu Control Pane</h1>
         </Jumbotron>
