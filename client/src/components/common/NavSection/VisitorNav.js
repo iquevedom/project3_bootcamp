@@ -9,7 +9,7 @@ class NavSection extends Component {
                     <Navbar.Brand href="/">The BIG Eats Eatery</Navbar.Brand>
                     <Nav className="mr-auto">
                         <Nav.Link href="/menu">Menu</Nav.Link>
-                        <Nav.Link href="/orders">Order</Nav.Link>
+                        {/* <Nav.Link href="/orders">Order</Nav.Link> */}
                     </Nav>
                 </Navbar>
             </>

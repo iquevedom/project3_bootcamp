@@ -1,39 +1,29 @@
 import React, { Component } from "react";
-import MenuRoute from "../../../utils/MenuRoute";
-import { Jumbotron, ListGroup, Container } from "react-bootstrap/es/";
+import { Jumbotron, ListGroup, Container, Button } from "react-bootstrap/es";
 import "./visitor.css"
-import { Link } from "react-router-dom";
 
 class VisitorMenu extends Component {
     state = {
         allTypes: ["sandwich", "appetizer", "beverage", "platter"],
-        items: [],
         name: "",
         ingredients: "",
         description: "",
         price: "",
         type: "",
-        itemRow: []
+        itemRow: [],
+        tempOrders: this.props.orders
     };
 
     componentDidMount() {
-        this.loadMenu();
+        this.props.loadMenu();
+        this.setState({
+            name: "",
+            ingredients: "",
+            description: "",
+            price: "",
+            type: ""
+        })
     }
-
-    loadMenu = () => {
-        MenuRoute.getMenu()
-            .then(res => {
-                this.setState({
-                    items: res.data,
-                    name: "",
-                    ingredients: "",
-                    description: "",
-                    price: "",
-                    type: ""
-                })
-            })
-            .catch(err => console.log(err));
-    };
 
     render() {
         return (
@@ -41,17 +31,17 @@ class VisitorMenu extends Component {
                 <Jumbotron>
                     <h1>The BIG Menu</h1>
                 </Jumbotron>
-                {this.state.items.length ? (
+                {this.props.items.length ? (
                     <Container>
-                        {this.state.items.map(item => (
-                            <ListGroup>
+                        <ListGroup>
+                            {this.props.items.map(item => (
                                 <ListGroup.Item key={item._id}>
                                     <h3 className="item-head">{item.name}</h3>
                                     <p className="item-ingredients">{item.ingredients}</p>
                                     <p className="item-description">{item.description}</p>
                                 </ListGroup.Item>
-                            </ListGroup>
-                        ))}
+                            ))}
+                        </ListGroup>
                     </Container>
                 ) : (
                         <h3>Our menu is currently unavailable for viewing.</h3>

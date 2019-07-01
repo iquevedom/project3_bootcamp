@@ -11,7 +11,7 @@ export default {
   postInfoByPhone(phone) {
     return Axios.post("api/info/" + phone);
   },
-  postInfo(id) {
+  postInfoById(id) {
     return Axios.post("/api/info/" + id);
   }
 }

@@ -9,21 +9,21 @@ class AdminMenu extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-4">
+          {/* <Col size="md-4">
             <Jumbotron>
               <a className="navbar-brand" href="/admin/events">Events Management</a>
             </Jumbotron>
-          </Col>
+          </Col> */}
           <Col size="md-4 sm-12">
             <Jumbotron>
               <a className="navbar-brand" href="/admin/menu">Menu Management</a>
             </Jumbotron>
           </Col>
-          <Col size="md-4 sm-12">
+          {/* <Col size="md-4 sm-12">
             <Jumbotron>
               <a className="navbar-brand" href="/admin/revenue">Revenue Reports</a>
             </Jumbotron>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
 
