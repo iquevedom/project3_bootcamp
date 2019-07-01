@@ -76,4 +76,17 @@ router.delete("/menu/:id", (req, res) => {
     .catch(err => res.status(422).json(err));
 });
 
+// =====================
+// Visitor Data Controls
+// =====================
+
+// Checks all visitor information
+// Future implementation for 
+// router.get("/info", (req, res) => {
+//   db.Visitors
+//     .find()
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err))
+// });
+
 module.exports = router;

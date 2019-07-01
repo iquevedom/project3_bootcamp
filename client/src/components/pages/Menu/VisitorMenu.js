@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import MenuRoute from "../../../utils/MenuRoute";
-import NavSection from "../../common/NavVisitors/NavSection"
-import Footer from "../../common/Footer";
 import { Jumbotron, ListGroup, Container } from "react-bootstrap/es/";
 import "./visitor.css"
 import { Link } from "react-router-dom";
@@ -33,15 +31,13 @@ class VisitorMenu extends Component {
                     price: "",
                     type: ""
                 })
-            }
-            )
+            })
             .catch(err => console.log(err));
     };
 
     render() {
         return (
             <>
-                <NavSection />
                 <Jumbotron>
                     <h1>The BIG Menu</h1>
                 </Jumbotron>
@@ -60,7 +56,6 @@ class VisitorMenu extends Component {
                 ) : (
                         <h3>Our menu is currently unavailable for viewing.</h3>
                     )}
-                <Footer />
             </>
         )
     }
